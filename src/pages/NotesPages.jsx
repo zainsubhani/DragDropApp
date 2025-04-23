@@ -1,12 +1,14 @@
-import { fakeData as notes } from "../assets/fakeData.js";
-import NoteCard from "../components/NoteCard";
+import React from "react";
+import fakeData from "../assets/fakeData.json";
+import { NoteCard } from "../pages/NoteCard";
 
 export const NotesPage = () => {
   return (
-    <div>
-      {notes.map((note) => (
-        <NoteCard note={note} key={note.$id} />
+    <div className="note-grid">
+      {fakeData.map((note) => (
+        <NoteCard key={note.$id} note={note} />
       ))}
     </div>
   );
 };
+export default NotesPage;
